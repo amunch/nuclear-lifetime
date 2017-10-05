@@ -10,7 +10,7 @@ import statsmodels.formula.api as sm
 from scipy.optimize import curve_fit
 
 # To get the equation to transform channel to time, run the calibrate function.
-# It will return the tuple (y, intercept)
+# It will return the tuple of tuples ((y, intercept), (y error, intercept error))
 
 def gauss_function(x, a, x0, sigma):
     return a*np.exp(-(x-x0)**2/(2*sigma**2))
