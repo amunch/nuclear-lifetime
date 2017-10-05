@@ -82,4 +82,4 @@ def calibrate():
 
     wls_fit = sm.wls('x ~ y', data=ws, weights=1 / weights).fit()
 
-    return(wls_fit.params['y'], wls_fit.params['Intercept'])
+    return((wls_fit.params['y'], wls_fit.params['Intercept']),(wls_fit.bse['y'], wls_fit.bse['Intercept']))
